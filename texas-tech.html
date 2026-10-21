@@ -1,0 +1,2424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Land Work & Career Opportunities — Dudley Land Company</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* ===========================================
+           RESET & BASE
+           =========================================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* ===========================================
+           VIEWPORT FITTING: MANDATORY BASE STYLES
+           =========================================== */
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+        }
+        html {
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-height: 100%;
+            overflow: hidden;
+            padding: var(--slide-padding);
+        }
+        :root {
+            --title-size: clamp(1.5rem, 5vw, 4rem);
+            --h2-size: clamp(1.25rem, 3.5vw, 2.5rem);
+            --h3-size: clamp(1rem, 2.5vw, 1.75rem);
+            --body-size: clamp(0.75rem, 1.5vw, 1.125rem);
+            --small-size: clamp(0.65rem, 1vw, 0.875rem);
+            --slide-padding: clamp(1rem, 4vw, 4rem);
+            --content-gap: clamp(0.5rem, 2vw, 2rem);
+            --element-gap: clamp(0.25rem, 1vw, 1rem);
+        }
+        .card, .container, .content-box {
+            max-width: min(90vw, 1000px);
+            max-height: min(80vh, 700px);
+        }
+        .feature-list, .bullet-list {
+            gap: clamp(0.4rem, 1vh, 1rem);
+        }
+        .feature-list li, .bullet-list li {
+            font-size: var(--body-size);
+            line-height: 1.4;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+            gap: clamp(0.5rem, 1.5vw, 1rem);
+        }
+        img, .image-container {
+            max-width: 100%;
+            max-height: min(50vh, 400px);
+            object-fit: contain;
+        }
+        @media (max-height: 700px) {
+            :root {
+                --slide-padding: clamp(0.75rem, 3vw, 2rem);
+                --content-gap: clamp(0.4rem, 1.5vw, 1rem);
+                --title-size: clamp(1.25rem, 4.5vw, 2.5rem);
+                --h2-size: clamp(1rem, 3vw, 1.75rem);
+            }
+        }
+        @media (max-height: 600px) {
+            :root {
+                --slide-padding: clamp(0.5rem, 2.5vw, 1.5rem);
+                --content-gap: clamp(0.3rem, 1vw, 0.75rem);
+                --title-size: clamp(1.1rem, 4vw, 2rem);
+                --body-size: clamp(0.7rem, 1.2vw, 0.95rem);
+            }
+            .nav-dots, .keyboard-hint, .decorative { display: none; }
+        }
+        @media (max-height: 500px) {
+            :root {
+                --slide-padding: clamp(0.4rem, 2vw, 1rem);
+                --title-size: clamp(1rem, 3.5vw, 1.5rem);
+                --h2-size: clamp(0.9rem, 2.5vw, 1.25rem);
+                --body-size: clamp(0.65rem, 1vw, 0.85rem);
+            }
+        }
+        @media (max-width: 600px) {
+            :root {
+                --title-size: clamp(1.25rem, 7vw, 2.5rem);
+            }
+            .grid { grid-template-columns: 1fr; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.2s !important;
+            }
+            html { scroll-behavior: auto; }
+        }
+
+        /* ===========================================
+           DUDLEY LAND COMPANY DESIGN SYSTEM
+           =========================================== */
+        :root {
+            /* Dudley Colors */
+            --dlc-black: #222222;
+            --dlc-true-black: #000000;
+            --dlc-white: #ffffff;
+            --dlc-green: #42bd48;
+            --dlc-green-hover: #3aa841;
+            --dlc-green-light: #e8f7e9;
+            --dlc-gray-900: #2b2b2b;
+            --dlc-gray-800: #333333;
+            --dlc-gray-700: #4a4a4a;
+            --dlc-gray-600: #666666;
+            --dlc-gray-500: #888888;
+            --dlc-gray-400: #aaaaaa;
+            --dlc-gray-300: #cccccc;
+            --dlc-gray-200: #e5e5e5;
+            --dlc-gray-100: #f7f7f7;
+
+            /* Typography */
+            --font-family: 'Lato', sans-serif;
+
+            /* Spacing */
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 12px;
+            --space-4: 16px;
+            --space-5: 24px;
+            --space-6: 32px;
+            --space-7: 48px;
+            --space-8: 64px;
+
+            /* Shadows */
+            --shadow-sm: 0px 2px 15px rgba(0,0,0,0.08);
+            --shadow-md: 0px 2px 20px rgba(0,0,0,0.1);
+            --shadow-lg: 0px 0px 14px -4px rgba(0,0,0,0.2);
+
+            /* Animation */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --duration-normal: 0.6s;
+        }
+
+        body {
+            font-family: var(--font-family);
+            font-weight: 400;
+            color: var(--dlc-white);
+            background: var(--dlc-black);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ===========================================
+           SLIDE VARIANTS
+           =========================================== */
+        .slide-dark {
+            background: var(--dlc-black);
+            color: var(--dlc-white);
+        }
+        .slide-light {
+            background: var(--dlc-gray-100);
+            color: var(--dlc-black);
+        }
+        .slide-light .eyebrow { color: var(--dlc-green) !important; }
+        .slide-light h2 { color: var(--dlc-black) !important; }
+        .slide-light p, .slide-light li { color: var(--dlc-gray-700) !important; }
+        .slide-light .accent-bar { background: var(--dlc-green) !important; }
+        .slide-light .section-num { color: rgba(0,0,0,0.04); }
+        .slide-light .split-heading .big-num { color: rgba(0,0,0,0.06); }
+        .slide-light .footer-strip { background: var(--dlc-gray-200); color: var(--dlc-gray-600); }
+        .slide-light .info-card { background: var(--dlc-white); border-top-color: var(--dlc-gray-300); }
+        .slide-light .info-card h4 { color: var(--dlc-black) !important; }
+        .slide-light .info-card p { color: var(--dlc-gray-600) !important; }
+        .slide-light .info-card .card-num { color: var(--dlc-gray-300) !important; }
+        .slide-light .bullet-list li::before { background: var(--dlc-green); }
+        .slide-light .connector-col { border-color: var(--dlc-gray-300); }
+        .slide-light .connector-col h3 { color: var(--dlc-black) !important; }
+        .slide-light .connector-col .bullet-list li { color: var(--dlc-gray-700) !important; }
+
+        .slide-section {
+            background: var(--dlc-green);
+            color: var(--dlc-white);
+        }
+        .slide-section .section-num {
+            color: rgba(255,255,255,0.15);
+        }
+        .slide-section h2 {
+            color: var(--dlc-white) !important;
+        }
+
+        /* ===========================================
+           TYPOGRAPHY
+           =========================================== */
+        .eyebrow {
+            font-size: clamp(0.6rem, 1.1vw, 0.85rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--dlc-green);
+            margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+        }
+
+        .accent-bar {
+            width: 64px;
+            height: 4px;
+            background: var(--dlc-green);
+            margin-bottom: clamp(0.75rem, 1.5vw, 1.25rem);
+        }
+
+        h1 {
+            font-family: var(--font-family);
+            font-size: var(--title-size);
+            font-weight: 900;
+            line-height: 1.1;
+            color: var(--dlc-white);
+        }
+
+        h2 {
+            font-family: var(--font-family);
+            font-size: var(--h2-size);
+            font-weight: 900;
+            line-height: 1.2;
+            color: var(--dlc-white);
+            margin-bottom: clamp(0.75rem, 2vw, 1.5rem);
+        }
+
+        h3 {
+            font-family: var(--font-family);
+            font-size: var(--h3-size);
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--dlc-white);
+        }
+
+        p, li {
+            font-family: var(--font-family);
+            font-size: var(--body-size);
+            line-height: 1.5;
+            color: var(--dlc-gray-300);
+        }
+
+        /* ===========================================
+           INFOGRAPHIC LAYOUT SYSTEM
+           =========================================== */
+
+        /* Split-screen layout: left heading area, right content */
+        .split-layout {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 30fr 70fr;
+            max-height: 100%;
+            overflow: hidden;
+        }
+        .split-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(1.5rem, 4vw, 4rem) clamp(1.5rem, 3vw, 3rem);
+            position: relative;
+        }
+        .split-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(1.5rem, 4vw, 4rem) clamp(2rem, 4vw, 4rem);
+            overflow: hidden;
+        }
+        @media (max-width: 768px) {
+            .split-layout { grid-template-columns: 1fr; }
+            .split-left { padding: clamp(1rem, 3vw, 2rem) clamp(1.5rem, 4vw, 3rem) 0; }
+            .split-right { padding: clamp(0.5rem, 2vw, 1rem) clamp(1.5rem, 4vw, 3rem) clamp(1rem, 3vw, 2rem); }
+        }
+
+        /* Big number in the split-left */
+        .split-heading .big-num {
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 900;
+            color: rgba(255,255,255,0.06);
+            line-height: 0.9;
+            margin-bottom: clamp(0.25rem, 0.5vw, 0.5rem);
+        }
+
+        /* Standard slide inner (full-width variant) */
+        .slide-inner {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(2rem, 5vw, 6rem) clamp(2rem, 6vw, 8rem);
+            max-height: 100%;
+            overflow: hidden;
+        }
+
+        /* Bullet list */
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.4rem, 1vh, 0.85rem);
+        }
+        .bullet-list li {
+            padding-left: clamp(1rem, 2vw, 1.5rem);
+            position: relative;
+        }
+        .bullet-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: clamp(0.4rem, 0.7vw, 0.55rem);
+            width: 6px;
+            height: 6px;
+            background: var(--dlc-green);
+        }
+
+        /* Two-column */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1.5rem, 4vw, 4rem);
+            align-items: start;
+        }
+        @media (max-width: 768px) {
+            .two-col { grid-template-columns: 1fr; }
+        }
+
+        /* ===========================================
+           INFOGRAPHIC CARDS
+           =========================================== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(0.5rem, 1.5vw, 1rem);
+        }
+        @media (max-width: 768px) {
+            .info-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        .info-card {
+            background: var(--dlc-gray-900);
+            padding: clamp(0.75rem, 2vw, 1.5rem);
+            border-top: 3px solid var(--dlc-green);
+            position: relative;
+        }
+        .info-card .card-icon {
+            font-size: clamp(1.2rem, 2.5vw, 2rem);
+            margin-bottom: clamp(0.3rem, 0.6vw, 0.5rem);
+            line-height: 1;
+            display: block;
+        }
+        .info-card .card-num {
+            font-size: clamp(0.6rem, 0.8vw, 0.7rem);
+            font-weight: 900;
+            color: var(--dlc-gray-600);
+            letter-spacing: 0.1em;
+            margin-bottom: clamp(0.2rem, 0.4vw, 0.35rem);
+        }
+        .info-card h4 {
+            font-size: clamp(0.7rem, 1.2vw, 0.95rem);
+            font-weight: 700;
+            color: var(--dlc-white);
+            margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);
+        }
+        .info-card p {
+            font-size: clamp(0.6rem, 0.9vw, 0.8rem);
+            color: var(--dlc-gray-400);
+            line-height: 1.4;
+        }
+
+        /* ===========================================
+           STAT CALLOUTS
+           =========================================== */
+        .stat-row {
+            display: flex;
+            gap: clamp(1rem, 3vw, 3rem);
+            flex-wrap: wrap;
+        }
+        .stat-block .stat-value {
+            font-size: clamp(1.5rem, 4vw, 3.5rem);
+            font-weight: 900;
+            color: var(--dlc-green);
+            line-height: 1;
+        }
+        .stat-block .stat-label {
+            font-size: clamp(0.6rem, 0.9vw, 0.8rem);
+            font-weight: 400;
+            color: var(--dlc-gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: var(--space-1);
+        }
+
+        /* Metric callout (inline highlight) */
+        .metric-callout {
+            display: inline-block;
+            font-size: clamp(1.2rem, 3vw, 2.5rem);
+            font-weight: 900;
+            color: var(--dlc-green);
+            line-height: 1;
+            margin-right: clamp(0.5rem, 1vw, 1rem);
+        }
+
+        /* ===========================================
+           DONUT CHART (CSS-only)
+           =========================================== */
+        .donut-container {
+            display: flex;
+            align-items: center;
+            gap: clamp(1.5rem, 4vw, 3rem);
+        }
+        .donut-chart {
+            width: clamp(140px, 22vw, 220px);
+            height: clamp(140px, 22vw, 220px);
+            border-radius: 50%;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .donut-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+            width: 60%;
+            height: 60%;
+            background: var(--dlc-black);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .donut-center .donut-total {
+            font-size: clamp(0.9rem, 2vw, 1.5rem);
+            font-weight: 900;
+            color: var(--dlc-white);
+            line-height: 1;
+        }
+        .donut-center .donut-label {
+            font-size: clamp(0.5rem, 0.7vw, 0.6rem);
+            color: var(--dlc-gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 2px;
+        }
+        .donut-legend {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.25rem, 0.5vh, 0.5rem);
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.4rem, 0.8vw, 0.6rem);
+        }
+        .legend-swatch {
+            width: clamp(10px, 1.5vw, 14px);
+            height: clamp(10px, 1.5vw, 14px);
+            flex-shrink: 0;
+        }
+        .legend-text {
+            font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+            color: var(--dlc-gray-300);
+        }
+        .legend-pct {
+            font-weight: 700;
+            color: var(--dlc-white);
+            margin-left: auto;
+            padding-left: clamp(0.5rem, 1vw, 1rem);
+            font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+        }
+
+        /* ===========================================
+           CONNECTOR / FLOW LAYOUT
+           =========================================== */
+        .connector-layout {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 0;
+            align-items: stretch;
+        }
+        .connector-col {
+            padding: clamp(1rem, 2vw, 1.5rem);
+            border: 2px solid var(--dlc-gray-700);
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.5rem, 1vh, 0.75rem);
+        }
+        .connector-col h3 {
+            font-size: clamp(0.8rem, 1.3vw, 1rem);
+            margin-bottom: clamp(0.2rem, 0.5vw, 0.4rem);
+        }
+        .connector-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 clamp(0.5rem, 1.5vw, 1.5rem);
+            position: relative;
+        }
+        .connector-arrow::before {
+            content: '';
+            width: 2px;
+            height: 60%;
+            background: var(--dlc-green);
+            position: absolute;
+        }
+        .connector-arrow::after {
+            content: '';
+            width: clamp(24px, 4vw, 40px);
+            height: 2px;
+            background: var(--dlc-green);
+        }
+        .arrow-label {
+            font-size: clamp(0.5rem, 0.7vw, 0.6rem);
+            font-weight: 700;
+            color: var(--dlc-green);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            position: absolute;
+        }
+        @media (max-width: 768px) {
+            .connector-layout { grid-template-columns: 1fr; }
+            .connector-arrow { display: none; }
+        }
+
+        /* ===========================================
+           PAY CARDS
+           =========================================== */
+        .pay-cards {
+            display: flex;
+            gap: clamp(0.4rem, 1vw, 0.75rem);
+            flex-wrap: wrap;
+        }
+        .pay-card {
+            flex: 1;
+            min-width: clamp(100px, 14vw, 140px);
+            background: var(--dlc-gray-900);
+            padding: clamp(0.5rem, 1.5vw, 1rem);
+            text-align: center;
+            position: relative;
+        }
+        .pay-card .pay-step {
+            font-size: clamp(0.5rem, 0.7vw, 0.6rem);
+            font-weight: 700;
+            color: var(--dlc-gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: clamp(0.2rem, 0.4vw, 0.3rem);
+        }
+        .pay-card .pay-hero {
+            font-size: clamp(1rem, 2.5vw, 2rem);
+            font-weight: 900;
+            color: var(--dlc-white);
+            line-height: 1;
+            margin-bottom: clamp(0.15rem, 0.3vw, 0.25rem);
+        }
+        .pay-card .pay-annual {
+            font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+            color: var(--dlc-gray-400);
+            margin-bottom: clamp(0.3rem, 0.6vw, 0.5rem);
+        }
+        .pay-card .pay-progress {
+            height: 3px;
+            background: var(--dlc-gray-800);
+            position: relative;
+        }
+        .pay-card .pay-progress-fill {
+            height: 100%;
+            background: var(--dlc-green);
+            width: 0;
+            transition: width 1.2s var(--ease-out-expo);
+        }
+
+        /* ===========================================
+           STAIR-STEP LADDER
+           =========================================== */
+        .stair-ladder {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+        }
+        .stair-step {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.75rem, 1.5vw, 1rem);
+            padding: clamp(0.35rem, 0.8vw, 0.55rem) clamp(0.75rem, 1.5vw, 1.25rem);
+            background: var(--dlc-gray-900);
+            position: relative;
+            border-left: 3px solid var(--dlc-green);
+        }
+        .stair-step .step-num {
+            font-size: clamp(0.9rem, 1.8vw, 1.4rem);
+            font-weight: 900;
+            color: var(--dlc-green);
+            min-width: clamp(1.5rem, 3vw, 2.5rem);
+            text-align: center;
+        }
+        .stair-step .step-title {
+            font-size: clamp(0.7rem, 1.1vw, 0.9rem);
+            font-weight: 700;
+            color: var(--dlc-white);
+        }
+        /* Ascending offset */
+        .stair-step:nth-child(1) { margin-left: 0; }
+        .stair-step:nth-child(2) { margin-left: clamp(0.5rem, 1.5vw, 1.5rem); }
+        .stair-step:nth-child(3) { margin-left: clamp(1rem, 3vw, 3rem); }
+        .stair-step:nth-child(4) { margin-left: clamp(1.5rem, 4.5vw, 4.5rem); }
+        .stair-step:nth-child(5) { margin-left: clamp(2rem, 6vw, 6rem); }
+        .stair-step:nth-child(6) { margin-left: clamp(2.5rem, 7.5vw, 7.5rem); }
+        .stair-step:nth-child(7) { margin-left: clamp(3rem, 9vw, 9rem); }
+        /* Connector lines between steps */
+        .stair-step + .stair-step::before {
+            content: '';
+            position: absolute;
+            left: -3px;
+            top: -4px;
+            width: 3px;
+            height: 4px;
+            background: var(--dlc-green);
+        }
+
+        /* ===========================================
+           TIMELINE (infographic style)
+           =========================================== */
+        .info-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.4rem, 0.8vh, 0.7rem);
+            position: relative;
+            padding-left: clamp(3rem, 6vw, 5rem);
+        }
+        .info-timeline::before {
+            content: '';
+            position: absolute;
+            left: clamp(1.2rem, 2.5vw, 2rem);
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--dlc-gray-700);
+        }
+        .tl-item {
+            position: relative;
+        }
+        .tl-item .tl-marker {
+            position: absolute;
+            left: calc(-1 * clamp(3rem, 6vw, 5rem) + clamp(0.5rem, 1.2vw, 1rem));
+            top: clamp(0.1rem, 0.3vw, 0.2rem);
+            width: clamp(18px, 3vw, 26px);
+            height: clamp(18px, 3vw, 26px);
+            background: var(--dlc-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(0.45rem, 0.7vw, 0.6rem);
+            font-weight: 900;
+            color: var(--dlc-white);
+        }
+        .tl-item .tl-label {
+            font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+            font-weight: 700;
+            color: var(--dlc-green);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .tl-item .tl-desc {
+            font-size: clamp(0.65rem, 1.1vw, 0.9rem);
+            color: var(--dlc-gray-300);
+            line-height: 1.4;
+        }
+
+        /* ===========================================
+           SECTION DIVIDER (Chapter open style)
+           =========================================== */
+        .section-divider-inner {
+            flex: 1;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: clamp(1.5rem, 4vw, 4rem);
+            align-items: center;
+            padding: clamp(2rem, 5vw, 6rem) clamp(2rem, 6vw, 8rem);
+        }
+        .section-divider-num {
+            font-size: clamp(4rem, 14vw, 12rem);
+            font-weight: 900;
+            color: rgba(255,255,255,0.2);
+            line-height: 0.85;
+            user-select: none;
+        }
+        .section-divider-content {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.5rem, 1vw, 0.75rem);
+        }
+        .section-divider-content h2 {
+            margin-bottom: 0;
+        }
+        .section-divider-content::after {
+            content: '';
+            width: clamp(40px, 8vw, 80px);
+            height: 2px;
+            background: rgba(255,255,255,0.3);
+            margin-top: clamp(0.25rem, 0.5vw, 0.5rem);
+        }
+
+        /* Section number (large watermark) */
+        .section-num {
+            font-size: clamp(4rem, 15vw, 12rem);
+            font-weight: 900;
+            color: rgba(255,255,255,0.04);
+            position: absolute;
+            right: clamp(1rem, 4vw, 4rem);
+            bottom: clamp(0.5rem, 2vw, 2rem);
+            line-height: 1;
+            user-select: none;
+            pointer-events: none;
+        }
+        .slide-light .section-num { color: rgba(0,0,0,0.04); }
+        .slide-section .section-num { color: rgba(255,255,255,0.15); }
+
+        /* ===========================================
+           FOOTER STRIP
+           =========================================== */
+        .footer-strip {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: clamp(24px, 3vh, 32px);
+            background: var(--dlc-gray-900);
+            display: flex;
+            align-items: center;
+            padding: 0 clamp(1.5rem, 4vw, 3rem);
+            font-size: clamp(0.5rem, 0.7vw, 0.6rem);
+            font-weight: 700;
+            color: var(--dlc-gray-600);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            z-index: 1;
+        }
+        .slide-section .footer-strip { background: transparent; color: transparent; }
+
+        /* ===========================================
+           MAP SLIDE
+           =========================================== */
+        .map-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .map-container img {
+            max-width: min(85vw, 800px);
+            max-height: min(50vh, 400px);
+            object-fit: contain;
+        }
+        .map-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.75);
+            padding: clamp(0.3rem, 0.8vw, 0.6rem) clamp(1rem, 2vw, 1.5rem);
+            max-width: min(85vw, 800px);
+            width: 100%;
+            text-align: center;
+        }
+        .map-overlay p {
+            font-size: clamp(0.55rem, 0.85vw, 0.7rem);
+            color: rgba(255,255,255,0.8);
+        }
+        .map-stats {
+            display: flex;
+            justify-content: center;
+            gap: clamp(1.5rem, 4vw, 3rem);
+            margin-top: clamp(0.75rem, 1.5vw, 1.25rem);
+        }
+        .map-stat {
+            text-align: center;
+        }
+        .map-stat .ms-val {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            font-weight: 900;
+            color: var(--dlc-green);
+            line-height: 1;
+        }
+        .map-stat .ms-label {
+            font-size: clamp(0.5rem, 0.7vw, 0.6rem);
+            color: var(--dlc-gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 2px;
+        }
+
+        /* ===========================================
+           ICON BULLETS
+           =========================================== */
+        .icon-bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.5rem, 1vh, 0.85rem);
+        }
+        .icon-bullet-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: clamp(0.5rem, 1.2vw, 1rem);
+            font-size: var(--body-size);
+            line-height: 1.5;
+            color: var(--dlc-gray-300);
+        }
+        .icon-bullet-list .ib-icon {
+            width: clamp(20px, 3vw, 28px);
+            height: clamp(20px, 3vw, 28px);
+            background: var(--dlc-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .icon-bullet-list .ib-icon svg {
+            width: 60%;
+            height: 60%;
+        }
+
+        /* ===========================================
+           ANIMATIONS
+           =========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity var(--duration-normal) var(--ease-out-expo),
+                        transform var(--duration-normal) var(--ease-out-expo);
+        }
+        .slide.visible .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal:nth-child(1) { transition-delay: 0.05s; }
+        .reveal:nth-child(2) { transition-delay: 0.12s; }
+        .reveal:nth-child(3) { transition-delay: 0.19s; }
+        .reveal:nth-child(4) { transition-delay: 0.26s; }
+        .reveal:nth-child(5) { transition-delay: 0.33s; }
+        .reveal:nth-child(6) { transition-delay: 0.40s; }
+        .reveal:nth-child(7) { transition-delay: 0.47s; }
+        .reveal:nth-child(8) { transition-delay: 0.54s; }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity var(--duration-normal) var(--ease-out-expo),
+                        transform var(--duration-normal) var(--ease-out-expo);
+        }
+        .slide.visible .reveal-left {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ===========================================
+           PROGRESS BAR
+           =========================================== */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--dlc-green);
+            z-index: 9999;
+            transition: width 0.3s ease;
+        }
+
+        /* ===========================================
+           NAV DOTS
+           =========================================== */
+        .nav-dots {
+            position: fixed;
+            right: clamp(0.75rem, 1.5vw, 1.5rem);
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 9998;
+        }
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--dlc-gray-600);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+        .nav-dot.active {
+            background: var(--dlc-green);
+            transform: scale(1.3);
+        }
+        .nav-dot:hover {
+            background: var(--dlc-green);
+        }
+
+        /* ===========================================
+           SLIDE COUNTER
+           =========================================== */
+        .slide-counter {
+            position: fixed;
+            bottom: clamp(1rem, 2vw, 1.5rem);
+            right: clamp(1rem, 2vw, 1.5rem);
+            font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+            font-weight: 400;
+            color: var(--dlc-gray-500);
+            z-index: 9998;
+            letter-spacing: 0.05em;
+        }
+
+        /* ===========================================
+           INLINE EDITING
+           =========================================== */
+        .edit-hotzone {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            z-index: 10000;
+            cursor: pointer;
+        }
+        .edit-toggle {
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            width: 36px;
+            height: 36px;
+            background: var(--dlc-green);
+            color: var(--dlc-white);
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 10001;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .edit-toggle.show,
+        .edit-toggle.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .edit-toggle.active {
+            background: var(--dlc-gray-700);
+        }
+        [contenteditable="true"] {
+            outline: 2px dashed var(--dlc-green);
+            outline-offset: 4px;
+            cursor: text;
+        }
+        .edit-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--dlc-green);
+            color: var(--dlc-white);
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px;
+            z-index: 10002;
+            display: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .edit-banner.show { display: block; }
+
+        /* ===========================================
+           QUOTE STYLE
+           =========================================== */
+        .quote-block {
+            border-left: 4px solid var(--dlc-green);
+            padding-left: clamp(1rem, 2vw, 1.5rem);
+            font-size: clamp(0.85rem, 1.6vw, 1.2rem);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--dlc-gray-300);
+            line-height: 1.6;
+        }
+
+        /* Bar chart (for backwards compat with JS) */
+        .bar-chart {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.25rem, 0.5vh, 0.4rem);
+        }
+        .bar-row {
+            display: flex;
+            align-items: center;
+            gap: clamp(0.5rem, 1vw, 0.75rem);
+        }
+        .bar-label {
+            font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+            font-weight: 700;
+            color: var(--dlc-gray-300);
+            min-width: clamp(4rem, 8vw, 6rem);
+            text-align: right;
+        }
+        .bar-track {
+            flex: 1;
+            height: clamp(1rem, 2vh, 1.5rem);
+            background: var(--dlc-gray-800);
+            position: relative;
+        }
+        .bar-fill {
+            height: 100%;
+            background: var(--dlc-green);
+            width: 0;
+            transition: width 1s var(--ease-out-expo);
+        }
+        .bar-fill.accent { background: var(--dlc-gray-500); }
+        .bar-value {
+            font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+            font-weight: 700;
+            color: var(--dlc-gray-400);
+            min-width: 3em;
+        }
+
+        /* Pay grid (original style, kept for JS compatibility) */
+        .pay-grid {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: clamp(0.3rem, 0.6vh, 0.5rem) clamp(0.75rem, 2vw, 1.5rem);
+            align-items: center;
+        }
+        .pay-time {
+            font-size: clamp(0.6rem, 1vw, 0.8rem);
+            font-weight: 700;
+            color: var(--dlc-green);
+            text-align: right;
+        }
+        .pay-bar-track {
+            height: clamp(1.5rem, 2.5vh, 2rem);
+            background: var(--dlc-gray-800);
+            position: relative;
+        }
+        .pay-bar-fill {
+            height: 100%;
+            background: var(--dlc-green);
+            width: 0;
+            transition: width 1.2s var(--ease-out-expo);
+        }
+        .pay-amount {
+            font-size: clamp(0.65rem, 1.1vw, 0.9rem);
+            font-weight: 900;
+            color: var(--dlc-white);
+        }
+        /* ===========================================
+           SLIDE LOGO
+           =========================================== */
+        .slide-logo {
+            position: absolute;
+            bottom: clamp(1rem, 2vw, 1.5rem);
+            left: clamp(1.5rem, 3vw, 2.5rem);
+            height: clamp(16px, 2vw, 24px);
+            width: auto;
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 10;
+        }
+        .slide-logo.logo-lg {
+            height: clamp(24px, 3vw, 36px);
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Progress bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Navigation dots -->
+<nav class="nav-dots" id="navDots" aria-label="Slide navigation"></nav>
+
+<!-- Slide counter -->
+<div class="slide-counter" id="slideCounter"></div>
+
+<!-- Inline editing -->
+<div class="edit-hotzone" id="editHotzone"></div>
+<button class="edit-toggle" id="editToggle" title="Edit mode (E)">&#9998;</button>
+<div class="edit-banner" id="editBanner">Edit Mode — Click any text to edit &bull; Ctrl+S to save</div>
+
+
+<!-- ===================================================
+     SLIDE 1: TITLE
+     =================================================== -->
+<section class="slide slide-dark" id="slide-1">
+    <div class="split-layout">
+        <div class="split-left" style="justify-content:flex-end;padding-bottom:clamp(3rem,8vh,6rem);">
+            <div class="reveal" style="opacity:0.06;font-size:clamp(5rem,16vw,14rem);font-weight:900;line-height:0.85;color:var(--dlc-white);">DLC</div>
+        </div>
+        <div class="split-right">
+            <div class="reveal">
+                <p class="eyebrow">Texas Tech University &mdash; Energy Commerce Program</p>
+                <div class="accent-bar"></div>
+            </div>
+            <h1 class="reveal" style="margin-bottom:clamp(0.75rem,2vw,1.5rem);">Field Land Work &amp;<br>Career Opportunities</h1>
+            <p class="reveal" style="font-size:clamp(0.8rem,1.4vw,1.1rem);color:var(--dlc-gray-400);font-weight:300;">Brent Broussard, President &mdash; Dudley Land Company</p>
+            <p class="reveal" style="font-size:clamp(0.6rem,0.9vw,0.75rem);color:var(--dlc-gray-600);margin-top:clamp(0.5rem,1vw,0.75rem);letter-spacing:0.05em;">Conversational format &mdash; questions encouraged throughout</p>
+        </div>
+    </div>
+    <span class="section-num">DLC</span>
+    <div class="footer-strip">Dudley Land Company</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo logo-lg">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 2: WHO WE ARE
+     =================================================== -->
+<section class="slide slide-dark" id="slide-2">
+    <div class="split-layout">
+        <div class="split-left">
+            <div class="split-heading reveal">
+                <p class="eyebrow">Section 01</p>
+                <div class="big-num">01</div>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="accent-bar reveal"></div>
+            <h2 class="reveal">Who We Are</h2>
+            <ul class="bullet-list reveal">
+                <li>Dudley Land Company &mdash; land services firm founded on the broker/field side of the business</li>
+                <li>Offices in Katy, Oklahoma City, Pittsburgh, and Dallas (coming)</li>
+                <li>Serve oil &amp; gas, pipeline, utility, geothermal, solar, wind, battery storage, and lithium extraction clients</li>
+                <li>Not an operator &mdash; we're the execution arm that operators call when they need land work done fast and at scale</li>
+            </ul>
+        </div>
+    </div>
+    <span class="section-num">01</span>
+    <div class="footer-strip">01 &mdash; Who We Are</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 3: BRENT'S STORY
+     =================================================== -->
+<section class="slide slide-light" id="slide-3">
+    <div class="split-layout">
+        <div class="split-left">
+            <div class="split-heading reveal">
+                <p class="eyebrow">Personal Story</p>
+                <div class="big-num" style="color:rgba(0,0,0,0.06);">
+                    <span style="font-size:clamp(2rem,7vw,5.5rem);display:block;line-height:1;">22</span>
+                    <span style="font-size:clamp(0.5rem,0.8vw,0.65rem);text-transform:uppercase;letter-spacing:0.15em;color:var(--dlc-gray-500);font-weight:700;">years ago</span>
+                </div>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="accent-bar reveal"></div>
+            <h2 class="reveal">I Was Exactly Where You Are</h2>
+            <ul class="bullet-list reveal">
+                <li>22 years ago &mdash; energy management student, same questions, same uncertainty</li>
+                <li>Was the oldest of the young in the field business &mdash; same generational moment you're entering now</li>
+                <li>Currently owner and president of Dudley Land Company</li>
+                <li>The job I do today started from the seats you're sitting in</li>
+            </ul>
+        </div>
+    </div>
+    <span class="section-num">01</span>
+    <div class="footer-strip">01 &mdash; Personal Story</div>
+    <img src="assets/logo-black.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 4: AAPL DEMOGRAPHICS (Donut Chart)
+     =================================================== -->
+<section class="slide slide-dark" id="slide-4">
+    <div class="split-layout">
+        <div class="split-left">
+            <div class="split-heading reveal">
+                <p class="eyebrow">The Opportunity</p>
+                <div class="big-num">01</div>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="accent-bar reveal"></div>
+            <h2 class="reveal">AAPL Membership: 11,063 Members</h2>
+            <div class="donut-container reveal" id="aaplChart">
+                <!-- CSS Conic gradient donut -->
+                <div class="donut-chart" style="background: conic-gradient(
+                    var(--dlc-green) 0deg 3.6deg,
+                    #5dd362 3.6deg 33.84deg,
+                    #42bd48 33.84deg 72.36deg,
+                    var(--dlc-gray-500) 72.36deg 165.6deg,
+                    var(--dlc-gray-600) 165.6deg 205.2deg,
+                    var(--dlc-gray-700) 205.2deg 283.32deg,
+                    var(--dlc-gray-800) 283.32deg 360deg
+                );">
+                    <div class="donut-center">
+                        <span class="donut-total">11,063</span>
+                        <span class="donut-label">Members</span>
+                    </div>
+                </div>
+                <div class="donut-legend">
+                    <div class="legend-item">
+                        <div class="legend-swatch" style="background:var(--dlc-green);"></div>
+                        <span class="legend-text">Under 20</span>
+                        <span class="legend-pct">&lt;1%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-swatch" style="background:#5dd362;"></div>
+                        <span class="legend-text">20&ndash;29</span>
+                        <span class="legend-pct">8.4%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-swatch" style="background:#42bd48;"></div>
+                        <span class="legend-text">30&ndash;39</span>
+                        <span class="legend-pct">10.7%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-swatch" style="background:var(--dlc-gray-500);"></div>
+                        <span class="legend-text">40&ndash;49</span>
+                        <span class="legend-pct">25.9%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-swatch" style="background:var(--dlc-gray-600);"></div>
+                        <span class="legend-text">50&ndash;59</span>
+                        <span class="legend-pct">11%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-swatch" style="background:var(--dlc-gray-700);"></div>
+                        <span class="legend-text">Over 60</span>
+                        <span class="legend-pct">21.7%</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-swatch" style="background:var(--dlc-gray-800);"></div>
+                        <span class="legend-text">Unknown</span>
+                        <span class="legend-pct">22%</span>
+                    </div>
+                </div>
+            </div>
+            <p class="reveal" style="font-size:var(--small-size);color:var(--dlc-gray-500);margin-top:clamp(0.5rem,1vw,0.75rem);">Nearly 60% of members with known ages are over 40. The &ldquo;unknown&rdquo; group almost certainly skews older &mdash; AAPL didn&rsquo;t collect birth date data until ~2010.</p>
+        </div>
+    </div>
+    <span class="section-num">01</span>
+    <div class="footer-strip">01 &mdash; The Opportunity</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 5: THE GAP
+     =================================================== -->
+<section class="slide slide-dark" id="slide-5">
+    <div class="split-layout">
+        <div class="split-left" style="align-items:center;">
+            <div class="reveal" style="text-align:center;">
+                <div style="font-size:clamp(3rem,10vw,7rem);font-weight:900;color:var(--dlc-green);line-height:0.9;">~80%</div>
+                <div style="font-size:clamp(0.55rem,0.8vw,0.7rem);color:var(--dlc-gray-400);text-transform:uppercase;letter-spacing:0.1em;margin-top:var(--space-2);">over 40</div>
+                <div style="width:40px;height:2px;background:var(--dlc-gray-700);margin:clamp(0.75rem,1.5vw,1.25rem) auto;"></div>
+                <div style="font-size:clamp(2rem,6vw,4rem);font-weight:900;color:var(--dlc-gray-500);line-height:0.9;">&lt;20%</div>
+                <div style="font-size:clamp(0.55rem,0.8vw,0.7rem);color:var(--dlc-gray-400);text-transform:uppercase;letter-spacing:0.1em;margin-top:var(--space-2);">under 40</div>
+            </div>
+        </div>
+        <div class="split-right">
+            <p class="eyebrow reveal">Why You're in a Good Spot</p>
+            <div class="accent-bar reveal"></div>
+            <h2 class="reveal">The Field Needs You &mdash; Now</h2>
+            <ul class="bullet-list reveal">
+                <li>The experienced generation is aging out &mdash; not enough young professionals behind them</li>
+                <li>M&amp;A activity is consolidating in-house land departments &mdash; fewer in-house seats</li>
+                <li>You don&rsquo;t have to go in-house at a major to have a great career in land</li>
+            </ul>
+        </div>
+    </div>
+    <span class="section-num">01</span>
+    <div class="footer-strip">01 &mdash; The Opportunity</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 6: SECTION DIVIDER — FIELD LANDMAN
+     =================================================== -->
+<section class="slide slide-section" id="slide-6">
+    <div class="section-divider-inner">
+        <div class="section-divider-num reveal-left">02</div>
+        <div class="section-divider-content">
+            <p class="eyebrow reveal" style="color:rgba(255,255,255,0.7);">Section 02</p>
+            <h2 class="reveal" style="font-size:var(--title-size);">What Is a Field Landman?</h2>
+            <p class="reveal" style="font-size:clamp(0.8rem,1.4vw,1.1rem);color:rgba(255,255,255,0.75);max-width:600px;font-weight:300;">And where do you fit in the picture?</p>
+        </div>
+    </div>
+    <span class="section-num">02</span>
+    <div class="footer-strip"></div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 7: THE WORK
+     =================================================== -->
+<section class="slide slide-dark" id="slide-7">
+    <div class="split-layout">
+        <div class="split-left">
+            <div class="split-heading reveal">
+                <p class="eyebrow">The Work</p>
+                <div class="big-num">02</div>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="accent-bar reveal"></div>
+            <h2 class="reveal">What Field Landmen Do</h2>
+            <div class="reveal" style="display:flex;flex-direction:column;gap:clamp(0.6rem,1.2vh,1rem);">
+                <div style="display:flex;align-items:flex-start;gap:clamp(0.5rem,1vw,0.75rem);">
+                    <div style="width:clamp(24px,3vw,32px);height:clamp(24px,3vw,32px);background:var(--dlc-green);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2h10v10H2z" stroke="#fff" stroke-width="1.5"/><path d="M5 5h4M5 7h4M5 9h2" stroke="#fff" stroke-width="1"/></svg>
+                    </div>
+                    <p style="font-size:var(--body-size);color:var(--dlc-gray-300);line-height:1.4;">Courthouse research, title examination, lease acquisition, right-of-way, landowner negotiations, curative work, due diligence</p>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:clamp(0.5rem,1vw,0.75rem);">
+                    <div style="width:clamp(24px,3vw,32px);height:clamp(24px,3vw,32px);background:var(--dlc-green);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L7 3l4 8H3z" stroke="#fff" stroke-width="1.5"/></svg>
+                    </div>
+                    <p style="font-size:var(--body-size);color:var(--dlc-gray-300);line-height:1.4;">The outputs: abstracts, run sheets, ownership reports, title opinions</p>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:clamp(0.5rem,1vw,0.75rem);">
+                    <div style="width:clamp(24px,3vw,32px);height:clamp(24px,3vw,32px);background:var(--dlc-green);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="4.5" stroke="#fff" stroke-width="1.5"/><path d="M7 4.5v5M4.5 7h5" stroke="#fff" stroke-width="1"/></svg>
+                    </div>
+                    <p style="font-size:var(--body-size);color:var(--dlc-gray-300);line-height:1.4;">Skills that make you effective: research, communication, negotiation, legal interpretation, geography, relationship management</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="section-num">02</span>
+    <div class="footer-strip">02 &mdash; What Field Landmen Do</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 8: WHERE BROKERS FIT
+     =================================================== -->
+<section class="slide slide-light" id="slide-8">
+    <div class="split-layout">
+        <div class="split-left">
+            <div class="split-heading reveal">
+                <p class="eyebrow">The Broker Model</p>
+                <div class="big-num" style="color:rgba(0,0,0,0.06);">
+                    <span style="font-size:clamp(2rem,7vw,5rem);display:block;line-height:1;">20</span>
+                    <span style="font-size:clamp(0.5rem,0.8vw,0.65rem);text-transform:uppercase;letter-spacing:0.15em;color:var(--dlc-gray-500);font-weight:700;">people deployed</span>
+                </div>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="accent-bar reveal"></div>
+            <h2 class="reveal">Where Broker Companies Fit</h2>
+            <ul class="bullet-list reveal">
+                <li>Operators call DLC: &ldquo;We need to run title on X tracts&rdquo; or &ldquo;Lease up this prospect area&rdquo; &mdash; then: how much time do you have?</li>
+                <li>Two weeks? We&rsquo;ll put 20 people on it. In-house teams can&rsquo;t surge like that.</li>
+                <li>Brokers provide scalability on demand &mdash; complexity, speed, and headcount constraints drive outsourcing</li>
+            </ul>
+        </div>
+    </div>
+    <span class="section-num">02</span>
+    <div class="footer-strip">02 &mdash; The Broker Model</div>
+    <img src="assets/logo-black.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 9: BROKER vs IN-HOUSE (Connector Flow)
+     =================================================== -->
+<section class="slide slide-dark" id="slide-9">
+    <div class="slide-inner">
+        <p class="eyebrow reveal">The Relationship</p>
+        <div class="accent-bar reveal"></div>
+        <h2 class="reveal">Broker vs. In-House</h2>
+        <div class="connector-layout reveal">
+            <div class="connector-col" style="border-color:var(--dlc-gray-600);">
+                <h3 style="margin-bottom:clamp(0.4rem,1vw,0.75rem);font-size:clamp(0.8rem,1.3vw,1rem);">In-House (The Client)</h3>
+                <ul class="bullet-list">
+                    <li>Owns strategy &mdash; what to lease, acquire, release</li>
+                    <li>Controls budget and vendor management</li>
+                </ul>
+            </div>
+            <div class="connector-arrow">
+                <span class="arrow-label">TRUST</span>
+            </div>
+            <div class="connector-col" style="border-color:var(--dlc-green);">
+                <h3 style="margin-bottom:clamp(0.4rem,1vw,0.75rem);font-size:clamp(0.8rem,1.3vw,1rem);">Broker (The Execution Arm)</h3>
+                <ul class="bullet-list">
+                    <li>Boots on the ground &mdash; courthouse, negotiations, curative</li>
+                    <li>Trust and track record drive repeat business</li>
+                </ul>
+            </div>
+        </div>
+        <p class="reveal" style="font-size:var(--small-size);color:var(--dlc-gray-500);margin-top:clamp(0.75rem,1.5vw,1rem);">Many landmen move between both worlds &mdash; knowing both sides makes you more valuable in either.</p>
+        <span class="section-num">02</span>
+    </div>
+    <div class="footer-strip">02 &mdash; The Relationship</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 10: SECTION DIVIDER — NOT JUST OIL & GAS
+     =================================================== -->
+<section class="slide slide-section" id="slide-10">
+    <div class="section-divider-inner">
+        <div class="section-divider-num reveal-left">03</div>
+        <div class="section-divider-content">
+            <p class="eyebrow reveal" style="color:rgba(255,255,255,0.7);">Section 03</p>
+            <h2 class="reveal" style="font-size:var(--title-size);">It&rsquo;s Not Just Oil &amp; Gas</h2>
+            <p class="reveal" style="font-size:clamp(0.8rem,1.4vw,1.1rem);color:rgba(255,255,255,0.75);font-weight:300;">This is the energy business.</p>
+        </div>
+    </div>
+    <span class="section-num">03</span>
+    <div class="footer-strip"></div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 11: ENERGY SECTORS (Icon Cards)
+     =================================================== -->
+<section class="slide slide-dark" id="slide-11">
+    <div class="slide-inner">
+        <p class="eyebrow reveal">Sectors</p>
+        <div class="accent-bar reveal"></div>
+        <h2 class="reveal">Same Core Skills &mdash; Every Energy Sector</h2>
+        <div class="info-grid reveal">
+            <div class="info-card">
+                <span class="card-num">01</span>
+                <span class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L8 10h8L12 2z" fill="var(--dlc-green)"/><rect x="10" y="10" width="4" height="12" fill="var(--dlc-gray-600)"/></svg></span>
+                <h4>Oil &amp; Gas</h4>
+                <p>Conventional &amp; unconventional</p>
+            </div>
+            <div class="info-card">
+                <span class="card-num">02</span>
+                <span class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 16h20M6 16V8M12 16V4M18 16V10" stroke="var(--dlc-green)" stroke-width="2"/></svg></span>
+                <h4>Midstream</h4>
+                <p>Pipelines</p>
+            </div>
+            <div class="info-card">
+                <span class="card-num">03</span>
+                <span class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 2v20M17 2v20M7 12h10" stroke="var(--dlc-green)" stroke-width="2"/><path d="M3 4l4-2M3 20l4 2M17 2l4 2M17 22l4-2" stroke="var(--dlc-green)" stroke-width="1.5"/></svg></span>
+                <h4>Utilities</h4>
+                <p>Overhead &amp; transmission lines</p>
+            </div>
+            <div class="info-card">
+                <span class="card-num">04</span>
+                <span class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" stroke="var(--dlc-green)" stroke-width="2"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.8 2.8M16.2 16.2L19 19M5 19l2.8-2.8M16.2 7.8L19 5" stroke="var(--dlc-green)" stroke-width="1.5"/></svg></span>
+                <h4>Renewables</h4>
+                <p>Solar, wind, battery storage</p>
+            </div>
+            <div class="info-card">
+                <span class="card-num">05</span>
+                <span class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="16" r="6" stroke="var(--dlc-green)" stroke-width="2"/><path d="M12 10V4M10 6l2-2 2 2" stroke="var(--dlc-green)" stroke-width="1.5"/></svg></span>
+                <h4>Geothermal</h4>
+                <p>Next-gen energy</p>
+            </div>
+            <div class="info-card">
+                <span class="card-num">06</span>
+                <span class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="var(--dlc-green)" stroke-width="2"/><path d="M8 12l3 3 5-6" stroke="var(--dlc-green)" stroke-width="2"/></svg></span>
+                <h4>Emerging</h4>
+                <p>Lithium, data centers, mineral buying</p>
+            </div>
+        </div>
+        <span class="section-num">03</span>
+    </div>
+    <div class="footer-strip">03 &mdash; Energy Sectors</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 12: WORK SETTING
+     =================================================== -->
+<section class="slide slide-dark" id="slide-12">
+    <div class="split-layout">
+        <div class="split-left">
+            <div class="split-heading reveal">
+                <p class="eyebrow">Section 04</p>
+                <div class="big-num">04</div>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="accent-bar reveal"></div>
+            <h2 class="reveal">Work Setting &amp; Location Flexibility</h2>
+            <ul class="bullet-list reveal">
+                <li>Field-based, courthouse-based, or remote capable</li>
+                <li>You don&rsquo;t have to live in Houston or Dallas &mdash; you can do this from your hometown</li>
+                <li>Or jump on a job in Wyoming and see the country</li>
+                <li>Geographic freedom is built into this career</li>
+            </ul>
+        </div>
+    </div>
+    <span class="section-num">04</span>
+    <div class="footer-strip">04 &mdash; Work Setting</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 12b: LANDMAN MAP
+     =================================================== -->
+<section class="slide slide-dark" id="slide-12b">
+    <div class="slide-inner" style="align-items:center;text-align:center;">
+        <p class="eyebrow reveal">Field Landman Footprint</p>
+        <div class="accent-bar reveal" style="margin-left:auto;margin-right:auto;"></div>
+        <div class="map-container reveal">
+            <img src="assets/Landman_Map.png" alt="US map showing where independent field landmen are working nationwide">
+            <div class="map-overlay">
+                <p>Where independent field landmen are working across the country &mdash; the work is everywhere, it follows the energy.</p>
+            </div>
+        </div>
+        <div class="map-stats reveal">
+            <div class="map-stat">
+                <div class="ms-val">50</div>
+                <div class="ms-label">States</div>
+            </div>
+            <div class="map-stat">
+                <div class="ms-val">Every</div>
+                <div class="ms-label">Energy Hub</div>
+            </div>
+            <div class="map-stat">
+                <div class="ms-val">Remote</div>
+                <div class="ms-label">Capable</div>
+            </div>
+        </div>
+        <span class="section-num">04</span>
+    </div>
+    <div class="footer-strip">04 &mdash; Field Landman Footprint</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 13: TWO WAYS TO WORK
+     =================================================== -->
+<section class="slide slide-light" id="slide-13">
+    <div class="slide-inner">
+        <p class="eyebrow reveal">Two Paths</p>
+        <div class="accent-bar reveal"></div>
+        <h2 class="reveal">Two Ways to Work in This Business</h2>
+        <div class="connector-layout reveal">
+            <div class="connector-col" style="border-color:var(--dlc-gray-400);">
+                <h3 style="margin-bottom:clamp(0.4rem,1vw,0.75rem);font-size:clamp(0.8rem,1.3vw,1rem);">Independent / Remote</h3>
+                <ul class="bullet-list">
+                    <li>Work from a home office</li>
+                    <li>Run your own assignments</li>
+                    <li>Location is largely your choice</li>
+                </ul>
+            </div>
+            <div class="connector-arrow"></div>
+            <div class="connector-col" style="border-color:var(--dlc-green);">
+                <h3 style="margin-bottom:clamp(0.4rem,1vw,0.75rem);font-size:clamp(0.8rem,1.3vw,1rem);">Brokerage Firm Employee</h3>
+                <ul class="bullet-list">
+                    <li>Based in an energy hub &mdash; Houston, OKC, Pittsburgh, Midland</li>
+                    <li>Office setting with a team around you</li>
+                    <li>Structured career progression</li>
+                </ul>
+            </div>
+        </div>
+        <p class="reveal" style="font-size:var(--small-size);color:var(--dlc-gray-600);margin-top:clamp(0.5rem,1vw,0.75rem);">ROW work (utility/pipeline) requires more on-site presence &mdash; but neither path requires you to be somewhere you don&rsquo;t want to be.</p>
+        <span class="section-num">04</span>
+    </div>
+    <div class="footer-strip">04 &mdash; Two Paths</div>
+    <img src="assets/logo-black.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 14: SECTION DIVIDER — FIRST 3 YEARS
+     =================================================== -->
+<section class="slide slide-section" id="slide-14">
+    <div class="section-divider-inner">
+        <div class="section-divider-num reveal-left">05</div>
+        <div class="section-divider-content">
+            <p class="eyebrow reveal" style="color:rgba(255,255,255,0.7);">Section 05</p>
+            <h2 class="reveal" style="font-size:var(--title-size);">The First 3 Years</h2>
+            <p class="reveal" style="font-size:clamp(0.8rem,1.4vw,1.1rem);color:rgba(255,255,255,0.75);font-weight:300;">What it actually looks like &mdash; in real numbers.</p>
+        </div>
+    </div>
+    <span class="section-num">05</span>
+    <div class="footer-strip"></div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 15: EARNING PROGRESSION (Pay Cards)
+     =================================================== -->
+<section class="slide slide-dark" id="slide-15">
+    <div class="slide-inner">
+        <p class="eyebrow reveal">Compensation</p>
+        <div class="accent-bar reveal"></div>
+        <h2 class="reveal">Earning Progression</h2>
+        <div class="pay-cards reveal" id="payChart">
+            <div class="pay-card">
+                <div class="pay-step">Day 1</div>
+                <div class="pay-hero">$250</div>
+                <div class="pay-annual">/day &mdash; ~$66K/yr</div>
+                <div class="pay-progress"><div class="pay-progress-fill" data-width="42"></div></div>
+            </div>
+            <div class="pay-card">
+                <div class="pay-step">6 Months</div>
+                <div class="pay-hero">$275</div>
+                <div class="pay-annual">/day</div>
+                <div class="pay-progress"><div class="pay-progress-fill" data-width="46"></div></div>
+            </div>
+            <div class="pay-card">
+                <div class="pay-step">12 Months</div>
+                <div class="pay-hero">$300</div>
+                <div class="pay-annual">/day &mdash; ~$80K/yr</div>
+                <div class="pay-progress"><div class="pay-progress-fill" data-width="50"></div></div>
+            </div>
+            <div class="pay-card">
+                <div class="pay-step">18 Months</div>
+                <div class="pay-hero">$325&ndash;350</div>
+                <div class="pay-annual">/day &mdash; ~$90K+</div>
+                <div class="pay-progress"><div class="pay-progress-fill" data-width="58"></div></div>
+            </div>
+            <div class="pay-card" style="border-top:3px solid var(--dlc-green);">
+                <div class="pay-step">Experienced</div>
+                <div class="pay-hero" style="color:var(--dlc-green);">$500&ndash;600</div>
+                <div class="pay-annual">/day &mdash; No ceiling</div>
+                <div class="pay-progress"><div class="pay-progress-fill" data-width="100"></div></div>
+            </div>
+        </div>
+        <p class="reveal" style="font-size:var(--small-size);color:var(--dlc-gray-500);margin-top:clamp(0.5rem,1vw,0.75rem);">Average bachelor&rsquo;s degree starting salary: $66&ndash;68K. You&rsquo;re at parity from day one with real upside built in.</p>
+        <span class="section-num">05</span>
+    </div>
+    <div class="footer-strip">05 &mdash; Compensation</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 16: FIRST 18 MONTHS TIMELINE
+     =================================================== -->
+<section class="slide slide-dark" id="slide-16">
+    <div class="split-layout">
+        <div class="split-left">
+            <div class="split-heading reveal">
+                <p class="eyebrow">Your Development</p>
+                <div class="big-num">05</div>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="accent-bar reveal"></div>
+            <h2 class="reveal">What You&rsquo;re Doing in Those 18 Months</h2>
+            <div class="info-timeline reveal">
+                <div class="tl-item">
+                    <div class="tl-marker">01</div>
+                    <div class="tl-label">Days 1&ndash;60</div>
+                    <div class="tl-desc">Systems orientation &mdash; how projects flow from courthouse to client</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-marker">02</div>
+                    <div class="tl-label">Months 1&ndash;6</div>
+                    <div class="tl-desc">Guided title work under a vetted mentor &mdash; courthouse research, chain of title, curative fundamentals. 30/60/90-day checkpoints.</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-marker">03</div>
+                    <div class="tl-label">Months 6&ndash;12</div>
+                    <div class="tl-desc">Running your own title assignments with mentor support &mdash; building regional knowledge, learning leasing and contracts</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-marker">04</div>
+                    <div class="tl-label">Months 12&ndash;18</div>
+                    <div class="tl-desc">Increasingly independent &mdash; recognized for your skillset, evaluated for leadership track</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="section-num">05</span>
+    <div class="footer-strip">05 &mdash; Your Development</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 17: DLC MENTOR PROGRAM
+     =================================================== -->
+<section class="slide slide-light" id="slide-17">
+    <div class="slide-inner">
+        <p class="eyebrow reveal">DLC Program</p>
+        <div class="accent-bar reveal"></div>
+        <h2 class="reveal">The DLC Mentor Program</h2>
+        <ul class="bullet-list reveal">
+            <li>Every trainee is paired one-on-one with a vetted, experienced crew chief</li>
+            <li>Mentors are compensated for their time &mdash; a real investment DLC makes in your development</li>
+            <li>Weekly check-ins, formal evaluations, structured benchmarks</li>
+            <li>Not just thrown at a courthouse and told to figure it out</li>
+        </ul>
+        <div class="reveal" style="margin-top:clamp(1rem,2vw,1.5rem);padding-top:clamp(0.75rem,1.5vw,1rem);border-top:2px solid var(--dlc-gray-200);">
+            <h3 style="font-size:clamp(0.75rem,1.2vw,0.95rem);margin-bottom:clamp(0.3rem,0.6vw,0.5rem);">Two Tracks Into This Career</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2vw,1.5rem);">
+                <div style="padding:clamp(0.5rem,1vw,0.75rem);background:var(--dlc-white);border-top:3px solid var(--dlc-green);">
+                    <p style="font-size:var(--small-size);"><strong style="color:var(--dlc-green);">Program candidate:</strong> Industry fundamentals + commitment &mdash; faster progression, management pipeline</p>
+                </div>
+                <div style="padding:clamp(0.5rem,1vw,0.75rem);background:var(--dlc-white);border-top:3px solid var(--dlc-gray-400);">
+                    <p style="font-size:var(--small-size);"><strong style="color:var(--dlc-green);">Non-program candidate:</strong> Broader backgrounds welcome &mdash; longer development path. Both tracks go through title. No shortcuts.</p>
+                </div>
+            </div>
+        </div>
+        <span class="section-num">05</span>
+    </div>
+    <div class="footer-strip">05 &mdash; DLC Mentor Program</div>
+    <img src="assets/logo-black.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 18: KEYS TO SUCCESS (Icon Cards)
+     =================================================== -->
+<section class="slide slide-dark" id="slide-18">
+    <div class="slide-inner">
+        <p class="eyebrow reveal">Section 06</p>
+        <div class="accent-bar reveal"></div>
+        <h2 class="reveal">Keys to Success</h2>
+        <div class="info-grid reveal">
+            <div class="info-card">
+                <span class="card-num">01</span>
+                <span class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" stroke="var(--dlc-green)" stroke-width="1.5"/><path d="M12 12V22M12 12L4 7M12 12l8-5" stroke="var(--dlc-green)" stroke-width="1"/></svg></span>
+                <h4>Technical Mastery</h4>
+                <p>Title is foundational &mdash; everything else builds on it</p>
+            </div>
+            <div class="info-card">
+                <span class="card-num">02</span>
+                <span class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="var(--dlc-green)" stroke-width="1.5"/><path d="M7 14l3-4 3 2 4-5" stroke="var(--dlc-green)" stroke-width="1.5"/></svg></span>
+                <h4>Data Fluency &amp; AI</h4>
+                <p>Leverage AI tools to work more efficiently &mdash; significant early advantage</p>
+            </div>
+            <div class="info-card">
+                <span class="card-num">03</span>
+                <span class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="var(--dlc-green)" stroke-width="1.5"/><circle cx="16" cy="8" r="3" stroke="var(--dlc-green)" stroke-width="1.5"/><path d="M3 20c0-3.3 2.7-6 6-6h1M14 14h1c3.3 0 6 2.7 6 6" stroke="var(--dlc-green)" stroke-width="1.5"/></svg></span>
+                <h4>Relationships</h4>
+                <p>Landowners, clients, attorneys, clerks &mdash; this business runs on trust</p>
+            </div>
+            <div class="info-card">
+                <span class="card-num">04</span>
+                <span class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M6 6l2.8 2.8M15.2 15.2L18 18" stroke="var(--dlc-green)" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="var(--dlc-green)" stroke-width="1.5"/></svg></span>
+                <h4>Reliability</h4>
+                <p>Who you are in the field follows you for your whole career</p>
+            </div>
+            <div class="info-card">
+                <span class="card-num">05</span>
+                <span class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 20l5-5 4 4 5-7 6 8" stroke="var(--dlc-green)" stroke-width="1.5"/><circle cx="19" cy="5" r="3" stroke="var(--dlc-green)" stroke-width="1.5"/></svg></span>
+                <h4>Continuous Learning</h4>
+                <p>Seek different project types, pursue certifications, understand the big picture</p>
+            </div>
+            <div class="info-card">
+                <span class="card-num">06</span>
+                <span class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="5" stroke="var(--dlc-green)" stroke-width="1.5"/><path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="var(--dlc-green)" stroke-width="1.5"/></svg></span>
+                <h4>Personality Fit</h4>
+                <p>Corporate in-house or courthouse &amp; road &mdash; know which one you are and own it</p>
+            </div>
+        </div>
+        <span class="section-num">06</span>
+    </div>
+    <div class="footer-strip">06 &mdash; Keys to Success</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 19: SECTION DIVIDER — CAREER PATHS
+     =================================================== -->
+<section class="slide slide-section" id="slide-19">
+    <div class="section-divider-inner">
+        <div class="section-divider-num reveal-left">07</div>
+        <div class="section-divider-content">
+            <p class="eyebrow reveal" style="color:rgba(255,255,255,0.7);">Section 07</p>
+            <h2 class="reveal" style="font-size:var(--title-size);">Your Three Career Paths</h2>
+            <p class="reveal" style="font-size:clamp(0.8rem,1.4vw,1.1rem);color:rgba(255,255,255,0.75);font-weight:300;">Independent. Brokerage. In-House.</p>
+        </div>
+    </div>
+    <span class="section-num">07</span>
+    <div class="footer-strip"></div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 20: PATH A — INDEPENDENT
+     =================================================== -->
+<section class="slide slide-dark" id="slide-20">
+    <div class="split-layout">
+        <div class="split-left" style="align-items:center;">
+            <div class="reveal" style="text-align:center;">
+                <div style="font-size:clamp(4rem,12vw,9rem);font-weight:900;color:rgba(255,255,255,0.08);line-height:0.85;">A</div>
+                <p class="eyebrow" style="margin-top:clamp(0.25rem,0.5vw,0.5rem);">Path A</p>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="accent-bar reveal"></div>
+            <h2 class="reveal">Stay Independent (1099)</h2>
+            <ul class="bullet-list reveal">
+                <li>Work project-to-project for various brokerage firms as a 1099 contractor</li>
+                <li>Build your own client base and reputation over time</li>
+                <li>Most likely working remotely from a home office</li>
+                <li>With the right experience and reputation, you can start your own brokerage firm</li>
+                <li>Earnings ceiling limited only by your capacity and reputation</li>
+            </ul>
+        </div>
+    </div>
+    <span class="section-num">07</span>
+    <div class="footer-strip">07 &mdash; Path A: Independent</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 21: PATH B — BROKERAGE TRACK (Stair-step)
+     =================================================== -->
+<section class="slide slide-dark" id="slide-21">
+    <div class="split-layout">
+        <div class="split-left" style="align-items:center;">
+            <div class="reveal" style="text-align:center;">
+                <div style="font-size:clamp(4rem,12vw,9rem);font-weight:900;color:rgba(255,255,255,0.08);line-height:0.85;">B</div>
+                <p class="eyebrow" style="margin-top:clamp(0.25rem,0.5vw,0.5rem);">Path B</p>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="accent-bar reveal"></div>
+            <h2 class="reveal">The Brokerage Company Track</h2>
+            <div class="stair-ladder reveal">
+                <div class="stair-step"><span class="step-num">01</span><span class="step-title">Field Landman (1099)</span></div>
+                <div class="stair-step"><span class="step-num">02</span><span class="step-title">Crew Chief (1099)</span></div>
+                <div class="stair-step"><span class="step-num">03</span><span class="step-title">Project Coordinator</span></div>
+                <div class="stair-step"><span class="step-num">04</span><span class="step-title">Project Manager</span></div>
+                <div class="stair-step"><span class="step-num">05</span><span class="step-title">Regional Director</span></div>
+                <div class="stair-step"><span class="step-num">06</span><span class="step-title">Vice President</span></div>
+                <div class="stair-step"><span class="step-num">07</span><span class="step-title">President</span></div>
+            </div>
+            <p class="reveal" style="font-size:var(--small-size);color:var(--dlc-gray-500);margin-top:clamp(0.5rem,1vw,0.75rem);">The best of the best get identified in years 3&ndash;5 and fast-tracked.</p>
+        </div>
+    </div>
+    <span class="section-num">07</span>
+    <div class="footer-strip">07 &mdash; Path B: Brokerage Track</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 22: PATH C — IN-HOUSE
+     =================================================== -->
+<section class="slide slide-light" id="slide-22">
+    <div class="split-layout">
+        <div class="split-left" style="align-items:center;">
+            <div class="reveal" style="text-align:center;">
+                <div style="font-size:clamp(4rem,12vw,9rem);font-weight:900;color:rgba(0,0,0,0.06);line-height:0.85;">C</div>
+                <p class="eyebrow" style="margin-top:clamp(0.25rem,0.5vw,0.5rem);">Path C</p>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="accent-bar reveal"></div>
+            <h2 class="reveal">Transition to In-House</h2>
+            <ul class="bullet-list reveal">
+                <li>Eventually the best field landmen get that offer &mdash; you may not want it, but you&rsquo;ll likely get it</li>
+                <li>Coming in with field experience means you&rsquo;re significantly more prepared than someone who went straight in-house</li>
+                <li>You&rsquo;ll know what it takes to get the work done, how long it should take, and you&rsquo;ll communicate with field counterparts far more clearly</li>
+            </ul>
+        </div>
+    </div>
+    <span class="section-num">07</span>
+    <div class="footer-strip">07 &mdash; Path C: In-House</div>
+    <img src="assets/logo-black.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 23: RUNNING YOUR OWN BUSINESS
+     =================================================== -->
+<section class="slide slide-dark" id="slide-23">
+    <div class="split-layout">
+        <div class="split-left">
+            <div class="split-heading reveal">
+                <p class="eyebrow">Section 08</p>
+                <div class="big-num">08</div>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="accent-bar reveal"></div>
+            <h2 class="reveal">The Independent Path: Your Own Business</h2>
+            <ul class="bullet-list reveal">
+                <li>1099 contractor, not W-2 &mdash; you are a business owner</li>
+                <li>Home office, vehicle, training, travel, and supplies are all potential tax write-offs</li>
+                <li>Source work through relationships, broker networks, AAPL connections</li>
+                <li>No paid vacation or traditional benefits &mdash; but no ceiling either</li>
+                <li>The flexibility and autonomy is something most careers can&rsquo;t offer</li>
+            </ul>
+        </div>
+    </div>
+    <span class="section-num">08</span>
+    <div class="footer-strip">08 &mdash; Your Own Business</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 24: CONTRACTOR REQUIREMENTS
+     =================================================== -->
+<section class="slide slide-dark" id="slide-24">
+    <div class="split-layout">
+        <div class="split-left">
+            <div class="split-heading reveal">
+                <p class="eyebrow">Real-World Example</p>
+                <div class="big-num">08</div>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="accent-bar reveal"></div>
+            <h2 class="reveal">DLC Contractor Requirements</h2>
+            <div class="reveal" style="display:flex;flex-direction:column;gap:clamp(0.4rem,0.8vh,0.65rem);">
+                <div style="display:flex;align-items:flex-start;gap:clamp(0.5rem,1vw,0.75rem);padding:clamp(0.4rem,0.8vw,0.6rem);background:var(--dlc-gray-900);border-left:3px solid var(--dlc-green);">
+                    <span style="font-size:clamp(0.55rem,0.8vw,0.65rem);font-weight:900;color:var(--dlc-green);min-width:1.5em;">01</span>
+                    <p style="font-size:var(--body-size);color:var(--dlc-gray-300);line-height:1.4;">Legitimate business entity: LLC, C Corp, S Corp, or LP &mdash; no sole proprietors</p>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:clamp(0.5rem,1vw,0.75rem);padding:clamp(0.4rem,0.8vw,0.6rem);background:var(--dlc-gray-900);border-left:3px solid var(--dlc-green);">
+                    <span style="font-size:clamp(0.55rem,0.8vw,0.65rem);font-weight:900;color:var(--dlc-green);min-width:1.5em;">02</span>
+                    <p style="font-size:var(--body-size);color:var(--dlc-gray-300);line-height:1.4;">Dedicated business bank account &mdash; DLC pays the business, not the individual</p>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:clamp(0.5rem,1vw,0.75rem);padding:clamp(0.4rem,0.8vw,0.6rem);background:var(--dlc-gray-900);border-left:3px solid var(--dlc-green);">
+                    <span style="font-size:clamp(0.55rem,0.8vw,0.65rem);font-weight:900;color:var(--dlc-green);min-width:1.5em;">03</span>
+                    <p style="font-size:var(--body-size);color:var(--dlc-gray-300);line-height:1.4;">Active AAPL membership required; IRWA may be required by project</p>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:clamp(0.5rem,1vw,0.75rem);padding:clamp(0.4rem,0.8vw,0.6rem);background:var(--dlc-gray-900);border-left:3px solid var(--dlc-green);">
+                    <span style="font-size:clamp(0.55rem,0.8vw,0.65rem);font-weight:900;color:var(--dlc-green);min-width:1.5em;">04</span>
+                    <p style="font-size:var(--body-size);color:var(--dlc-gray-300);line-height:1.4;">Workers&rsquo; Comp: carry your own or pay into DLC&rsquo;s policy</p>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:clamp(0.5rem,1vw,0.75rem);padding:clamp(0.4rem,0.8vw,0.6rem);background:var(--dlc-gray-900);border-left:3px solid var(--dlc-green);">
+                    <span style="font-size:clamp(0.55rem,0.8vw,0.65rem);font-weight:900;color:var(--dlc-green);min-width:1.5em;">05</span>
+                    <p style="font-size:var(--body-size);color:var(--dlc-gray-300);line-height:1.4;">Background check, MVR (3 years), driver&rsquo;s license, auto insurance</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="section-num">08</span>
+    <div class="footer-strip">08 &mdash; Contractor Requirements</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 25: SECTION DIVIDER — AI
+     =================================================== -->
+<section class="slide slide-section" id="slide-25">
+    <div class="section-divider-inner">
+        <div class="section-divider-num reveal-left">09</div>
+        <div class="section-divider-content">
+            <p class="eyebrow reveal" style="color:rgba(255,255,255,0.7);">Section 09</p>
+            <h2 class="reveal" style="font-size:var(--title-size);">What About AI?</h2>
+            <p class="reveal" style="font-size:clamp(0.8rem,1.4vw,1.1rem);color:rgba(255,255,255,0.75);font-weight:300;">The next five years will evolve faster than the last twenty.</p>
+        </div>
+    </div>
+    <span class="section-num">09</span>
+    <div class="footer-strip"></div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 26: AI IN LAND WORK
+     =================================================== -->
+<section class="slide slide-dark" id="slide-26">
+    <div class="split-layout">
+        <div class="split-left">
+            <div class="split-heading reveal">
+                <p class="eyebrow">AI &amp; The Landman</p>
+                <div class="big-num">09</div>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="accent-bar reveal"></div>
+            <h2 class="reveal">AI Doesn&rsquo;t Replace the Landman</h2>
+            <ul class="bullet-list reveal">
+                <li>Land work is relationship-based, judgment-based, and courthouse-based &mdash; AI doesn&rsquo;t change that foundation</li>
+                <li>AI can assist with research, QC, and documentation &mdash; it doesn&rsquo;t replace the landman negotiating with a 75-year-old rancher in Garfield County</li>
+                <li>The energy transition across multiple sectors is increasing demand for qualified landmen, not reducing it</li>
+            </ul>
+        </div>
+    </div>
+    <span class="section-num">09</span>
+    <div class="footer-strip">09 &mdash; AI &amp; The Landman</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 27: THE AI ADVANTAGE
+     =================================================== -->
+<section class="slide slide-dark" id="slide-27">
+    <div class="split-layout">
+        <div class="split-left">
+            <div class="split-heading reveal">
+                <p class="eyebrow">Your Advantage</p>
+                <div class="big-num">09</div>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="accent-bar reveal"></div>
+            <h2 class="reveal">AI Fluency Is Your Edge</h2>
+            <ul class="bullet-list reveal">
+                <li>You&rsquo;re entering the workforce at the exact moment AI becomes a practical, everyday tool &mdash; that&rsquo;s a significant advantage</li>
+                <li>The landmen who come in AI-enabled &mdash; who can extract meaningful information faster and more efficiently &mdash; will separate themselves from the pack</li>
+                <li>This is not optional &mdash; AI fluency is becoming a baseline expectation</li>
+                <li>Those who embrace it early will move faster, work smarter, and get noticed sooner</li>
+            </ul>
+        </div>
+    </div>
+    <span class="section-num">09</span>
+    <div class="footer-strip">09 &mdash; Your Advantage</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 27B: THE STACK
+     =================================================== -->
+<section class="slide slide-dark" id="slide-27b">
+    <div class="split-layout">
+        <div class="split-left">
+            <div class="split-heading reveal">
+                <p class="eyebrow">The Stack</p>
+                <div class="big-num">09</div>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="accent-bar reveal"></div>
+            <h2 class="reveal">The Stack You Should Already Be Using</h2>
+            <p class="reveal" style="font-size:var(--body-size);color:var(--dlc-gray-400);font-weight:300;margin-bottom:clamp(0.5rem,1.2vw,1rem);">None of this is land-specific. That is the point &mdash; you can be fluent in all of it before your first day.</p>
+            <div class="info-grid reveal" style="grid-template-columns:repeat(2,1fr);">
+                <div class="info-card">
+                    <div class="card-num">01</div>
+                    <h4>Capture Everything</h4>
+                    <p>Granola or any good transcription tool. Landowner calls, mentor sessions, site visits. In this business you get told something once, in a truck, that matters six months later. Stop relying on memory and a legal pad.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-num">02</div>
+                    <h4>Work By Voice</h4>
+                    <p>Wispr Flow and tools like it. Dictate at talking speed instead of typing speed, and learn to navigate by voice. A small change that compounds every single day you work.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-num">03</div>
+                    <h4>Agents On Your Machine</h4>
+                    <p>Claude Code, Codex. Not the chat window &mdash; these run against your actual folders. They organize files, read the whole stack, and help you decide. Give them real context and they give you real work back.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-num">04</div>
+                    <h4>Build And Ship</h4>
+                    <p>Learn to find and use Skills other people have already written. GitHub, so you understand where work lives and never lose it. Vercel, so you can put something real into the world. Then go build one thing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="section-num">09</span>
+    <div class="footer-strip">09 &mdash; The Stack</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 27C: WHY IT COMPOUNDS
+     =================================================== -->
+<section class="slide slide-dark" id="slide-27c">
+    <div class="split-layout">
+        <div class="split-left">
+            <div class="split-heading reveal">
+                <p class="eyebrow">The Payoff</p>
+                <div class="big-num">09</div>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="accent-bar reveal"></div>
+            <h2 class="reveal">Why It Compounds</h2>
+            <p class="reveal" style="font-size:var(--body-size);color:var(--dlc-gray-400);font-weight:300;margin-bottom:clamp(0.5rem,1.2vw,1rem);">Your mentor teaches you the hows and the whys. You still learn it by hand &mdash; that part does not change.</p>
+            <div class="info-timeline reveal">
+                <div class="tl-item">
+                    <div class="tl-marker">01</div>
+                    <div class="tl-label">You still learn it manually</div>
+                    <div class="tl-desc">Title fundamentals, chain of title, the reasoning behind every step. There are no shortcuts here, and none of this changes that.</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-marker">02</div>
+                    <div class="tl-label">The aptitude builds in parallel</div>
+                    <div class="tl-desc">You get fluent with the stack now, while you are still in school &mdash; not two years in, when somebody finally tells you to.</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-marker">03</div>
+                    <div class="tl-label">They converge when you go independent</div>
+                    <div class="tl-desc">Running your own assignments, your day stops going to manual typing and starts going to judgment &mdash; the tedious, important calls that actually need a landman.</div>
+                </div>
+                <div class="tl-item">
+                    <div class="tl-marker">04</div>
+                    <div class="tl-label">Cleaner work, earlier trust</div>
+                    <div class="tl-desc">Your work comes back with fewer misses. You get handed independent assignments sooner. The runway compresses &mdash; and that progression is a pay schedule.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="section-num">09</span>
+    <div class="footer-strip">09 &mdash; Why It Compounds</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 28: WHAT DO YOU DO NEXT
+     =================================================== -->
+<section class="slide slide-light" id="slide-28">
+    <div class="split-layout">
+        <div class="split-left">
+            <div class="split-heading reveal">
+                <p class="eyebrow">Section 10</p>
+                <div class="big-num" style="color:rgba(0,0,0,0.06);">10</div>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="accent-bar reveal"></div>
+            <h2 class="reveal">So What Do You Do Next?</h2>
+            <ul class="bullet-list reveal">
+                <li>You don&rsquo;t have to land at Exxon to have a great career in land</li>
+                <li>The field side is lucrative, flexible, and in need of young people right now</li>
+                <li>This generation is more entrepreneurial &mdash; broker work is a viable, respected career path</li>
+                <li>AAPL membership &mdash; start there</li>
+                <li>RPL/CPL certification path &mdash; your energy commerce degree counts toward experience credit</li>
+            </ul>
+        </div>
+    </div>
+    <span class="section-num">10</span>
+    <div class="footer-strip">10 &mdash; Next Steps</div>
+    <img src="assets/logo-black.png" alt="Dudley Land Company" class="slide-logo">
+</section>
+
+
+<!-- ===================================================
+     SLIDE 29: CONTACT
+     =================================================== -->
+<section class="slide slide-dark" id="slide-29">
+    <div class="slide-inner" style="align-items:center;text-align:center;">
+        <div class="reveal">
+            <p class="eyebrow">Let&rsquo;s Connect</p>
+            <div class="accent-bar" style="margin-left:auto;margin-right:auto;"></div>
+        </div>
+        <h2 class="reveal">Brent Broussard</h2>
+        <p class="reveal" style="font-size:clamp(0.75rem,1.2vw,1rem);color:var(--dlc-gray-400);margin-bottom:clamp(1rem,2vw,1.5rem);">President, Dudley Land Company</p>
+        <div class="reveal" style="display:flex;flex-direction:column;gap:clamp(0.3rem,0.6vh,0.5rem);align-items:center;">
+            <p style="font-size:var(--body-size);color:var(--dlc-gray-300);">brentbroussard@dudley-land.com</p>
+            <p style="font-size:var(--body-size);color:var(--dlc-gray-300);">713-952-7944</p>
+            <p style="font-size:var(--body-size);color:var(--dlc-gray-300);">dudley-land.com</p>
+        </div>
+        <div class="reveal" style="margin-top:clamp(1rem,2vw,1.5rem);padding-top:clamp(0.75rem,1.5vw,1rem);border-top:2px solid var(--dlc-gray-800);">
+            <p style="font-size:var(--small-size);color:var(--dlc-gray-500);">Podcast: <strong style="color:var(--dlc-gray-300);">The Land Department</strong> &mdash; Spotify, YouTube, Apple Podcasts</p>
+        </div>
+        <span class="section-num">DLC</span>
+    </div>
+    <div class="footer-strip">Dudley Land Company</div>
+    <img src="assets/logo-white.png" alt="Dudley Land Company" class="slide-logo logo-lg">
+</section>
+
+
+<!-- ===========================================
+     JAVASCRIPT: PRESENTATION CONTROLLER
+     =========================================== -->
+<script>
+    class SlidePresentation {
+        constructor() {
+            this.slides = document.querySelectorAll('.slide');
+            this.currentSlide = 0;
+            this.isScrolling = false;
+            this.setupIntersectionObserver();
+            this.setupKeyboardNav();
+            this.setupTouchNav();
+            this.setupProgressBar();
+            this.setupNavDots();
+            this.setupBarCharts();
+            this.setupSlideCounter();
+        }
+
+        /* === Intersection Observer: triggers .visible class === */
+        setupIntersectionObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        const idx = Array.from(this.slides).indexOf(entry.target);
+                        if (idx !== -1) {
+                            this.currentSlide = idx;
+                            this.updateNavDots();
+                            this.updateProgressBar();
+                            this.updateSlideCounter();
+                            this.animateBars(entry.target);
+                        }
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            this.slides.forEach(slide => observer.observe(slide));
+        }
+
+        /* === Keyboard Navigation === */
+        setupKeyboardNav() {
+            document.addEventListener('keydown', (e) => {
+                if (e.target.getAttribute('contenteditable') === 'true') return;
+                switch(e.key) {
+                    case 'ArrowDown':
+                    case 'ArrowRight':
+                    case ' ':
+                    case 'PageDown':
+                        e.preventDefault();
+                        this.goToSlide(this.currentSlide + 1);
+                        break;
+                    case 'ArrowUp':
+                    case 'ArrowLeft':
+                    case 'PageUp':
+                        e.preventDefault();
+                        this.goToSlide(this.currentSlide - 1);
+                        break;
+                    case 'Home':
+                        e.preventDefault();
+                        this.goToSlide(0);
+                        break;
+                    case 'End':
+                        e.preventDefault();
+                        this.goToSlide(this.slides.length - 1);
+                        break;
+                }
+            });
+        }
+
+        /* === Touch/Swipe Navigation === */
+        setupTouchNav() {
+            let touchStartY = 0;
+            document.addEventListener('touchstart', (e) => {
+                touchStartY = e.touches[0].clientY;
+            }, { passive: true });
+            document.addEventListener('touchend', (e) => {
+                const diff = touchStartY - e.changedTouches[0].clientY;
+                if (Math.abs(diff) > 50) {
+                    this.goToSlide(diff > 0 ? this.currentSlide + 1 : this.currentSlide - 1);
+                }
+            }, { passive: true });
+        }
+
+        /* === Progress Bar === */
+        setupProgressBar() {
+            this.progressBar = document.getElementById('progressBar');
+            this.updateProgressBar();
+        }
+        updateProgressBar() {
+            if (!this.progressBar) return;
+            const pct = ((this.currentSlide + 1) / this.slides.length) * 100;
+            this.progressBar.style.width = pct + '%';
+        }
+
+        /* === Navigation Dots === */
+        setupNavDots() {
+            const container = document.getElementById('navDots');
+            if (!container) return;
+            this.slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.className = 'nav-dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+                dot.addEventListener('click', () => this.goToSlide(i));
+                container.appendChild(dot);
+            });
+        }
+        updateNavDots() {
+            const dots = document.querySelectorAll('.nav-dot');
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === this.currentSlide);
+            });
+        }
+
+        /* === Slide Counter === */
+        setupSlideCounter() {
+            this.slideCounter = document.getElementById('slideCounter');
+            this.updateSlideCounter();
+        }
+        updateSlideCounter() {
+            if (!this.slideCounter) return;
+            this.slideCounter.textContent = String(this.currentSlide + 1).padStart(2, '0') + ' / ' + String(this.slides.length).padStart(2, '0');
+        }
+
+        /* === Go To Slide === */
+        goToSlide(index) {
+            if (index < 0 || index >= this.slides.length) return;
+            this.slides[index].scrollIntoView({ behavior: 'smooth' });
+        }
+
+        /* === Animate bar charts when slide is visible === */
+        setupBarCharts() {
+            // Bars will be animated when their parent slide becomes visible
+        }
+        animateBars(slide) {
+            const fills = slide.querySelectorAll('[data-width]');
+            fills.forEach((fill, i) => {
+                setTimeout(() => {
+                    fill.style.width = fill.dataset.width + '%';
+                }, i * 80);
+            });
+        }
+    }
+
+    /* ===========================================
+       INLINE EDITOR
+       =========================================== */
+    class InlineEditor {
+        constructor() {
+            this.isActive = false;
+            this.editToggle = document.getElementById('editToggle');
+            this.editBanner = document.getElementById('editBanner');
+            this.setupControls();
+            this.loadSaved();
+        }
+
+        setupControls() {
+            const hotzone = document.getElementById('editHotzone');
+            const editToggle = this.editToggle;
+            let hideTimeout = null;
+
+            /* Hotzone hover with 400ms grace period */
+            hotzone.addEventListener('mouseenter', () => {
+                clearTimeout(hideTimeout);
+                editToggle.classList.add('show');
+            });
+            hotzone.addEventListener('mouseleave', () => {
+                hideTimeout = setTimeout(() => {
+                    if (!this.isActive) editToggle.classList.remove('show');
+                }, 400);
+            });
+            editToggle.addEventListener('mouseenter', () => {
+                clearTimeout(hideTimeout);
+            });
+            editToggle.addEventListener('mouseleave', () => {
+                hideTimeout = setTimeout(() => {
+                    if (!this.isActive) editToggle.classList.remove('show');
+                }, 400);
+            });
+
+            /* Click handlers */
+            editToggle.addEventListener('click', () => this.toggleEditMode());
+            hotzone.addEventListener('click', () => this.toggleEditMode());
+
+            /* Keyboard shortcut: E key */
+            document.addEventListener('keydown', (e) => {
+                if ((e.key === 'e' || e.key === 'E') && !e.target.getAttribute('contenteditable')) {
+                    this.toggleEditMode();
+                }
+                /* Ctrl+S to save */
+                if (e.key === 's' && (e.ctrlKey || e.metaKey)) {
+                    e.preventDefault();
+                    this.save();
+                }
+            });
+        }
+
+        toggleEditMode() {
+            this.isActive = !this.isActive;
+            this.editToggle.classList.toggle('active', this.isActive);
+            this.editBanner.classList.toggle('show', this.isActive);
+
+            const editables = document.querySelectorAll('h1, h2, h3, h4, p, li, span.pay-amount, span.pay-time, span.step-title, span.bar-label, span.bar-value, div.time-label, div.time-desc, div.tl-label, div.tl-desc, div.pay-hero, div.pay-step, div.pay-annual');
+            editables.forEach(el => {
+                if (el.closest('.nav-dots') || el.closest('.edit-banner') || el.closest('.slide-counter')) return;
+                el.contentEditable = this.isActive ? 'true' : 'false';
+            });
+
+            if (!this.isActive) this.save();
+        }
+
+        save() {
+            const data = {};
+            document.querySelectorAll('.slide').forEach((slide, i) => {
+                data['slide-' + i] = slide.innerHTML;
+            });
+            localStorage.setItem('dlc-texas-tech-presentation', JSON.stringify(data));
+        }
+
+        loadSaved() {
+            const saved = localStorage.getItem('dlc-texas-tech-presentation');
+            if (!saved) return;
+            try {
+                const data = JSON.parse(saved);
+                document.querySelectorAll('.slide').forEach((slide, i) => {
+                    if (data['slide-' + i]) {
+                        slide.innerHTML = data['slide-' + i];
+                    }
+                });
+            } catch(e) { /* ignore parse errors */ }
+        }
+    }
+
+    /* Initialize */
+    const presentation = new SlidePresentation();
+    const editor = new InlineEditor();
+</script>
+
+</body>
+</html>

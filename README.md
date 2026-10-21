@@ -8,7 +8,7 @@ land management graduates.
 |---|---|
 | Texas Tech University | Energy Commerce |
 | The University of Oklahoma | Energy Management |
-| University of Wyoming | Professional Land Management |
+| University of Wyoming | Energy Resource Management and Development |
 | University of Louisiana at Lafayette | Professional Land and Resource Management |
 
 Each deck is 32 slides. Arrow keys or swipe to navigate; a PDF of each is in `pdf/`.
